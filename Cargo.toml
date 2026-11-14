@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: LicenseRef-Propietario
+[package]
+name = "xue"
+version = "0.3.0"
+edition = "2021"
+license = "LicenseRef-Propietario"
+authors = ["Juan Carlos Isaza"]
+description = "Xué — servidor MCP que revela ofuscación / inyección indirecta en salidas de herramientas, texto y manifiestos MCP (Trojan Source bidi, invisibles, tag-ASCII, esteganografía, homoglifos, IDN/punycode)."
+
+# Única dependencia: el transporte MCP es JSON-RPC 2.0 por stdio; serde_json
+# decodifica los escapes \uXXXX del payload (sin eso, falso negativo — D30).
+[dependencies]
+serde_json = "1"
+
+[lib]
+name = "xue"
+path = "src/lib.rs"
+
+[[bin]]
+name = "xue"
+path = "src/main.rs"
+
+# PUERTA de buenas prácticas (D26): el CI corre -D warnings.
+[lints.clippy]
+redundant_clone = "deny"
+needless_collect = "deny"
+
+# Dependencias optimizadas también en debug (estándar de nacimiento, D26).
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+opt-level = "s"

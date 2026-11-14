@@ -91,7 +91,7 @@ hand-rolled MCP stdio transport (JSON-RPC 2.0). Detection engine is a reusable
 library (`xue` crate) so it can be embedded directly, not only via MCP.
 
 ### License / authorship
-© Isaza. Proprietary. Detection core derived from the author's
+© Isaza Arenas. Proprietary. Detection core derived from the author's
 `olfateador_ofuscacion` engine.
 
 ---
@@ -187,5 +187,5 @@ detección es una biblioteca reutilizable (crate `xue`), así que puede empotrar
 directamente, no solo vía MCP.
 
 ### Licencia / autoría
-© Isaza. Propietario. El núcleo de detección deriva del motor
+© Isaza Arenas. Propietario. El núcleo de detección deriva del motor
 `olfateador_ofuscacion` del autor.
